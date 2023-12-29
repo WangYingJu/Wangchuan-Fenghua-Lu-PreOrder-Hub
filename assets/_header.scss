@@ -1,0 +1,62 @@
+.header {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  .nav2 {
+    font-size: 24px;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(129, 6, 24, 0.5);
+    @include table() {
+      padding: 0.24rem 0.4rem;
+      font-size: 0.38rem;
+    }
+    .menu-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .material-symbols-outlined {
+      @include windowXL() {
+        color: #fff;
+        font-size: 0.5rem;
+        line-height: 1;
+      }
+    }
+  }
+  .dropdown {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0vh;
+    width: 0vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(129, 6, 24, 0.9);
+    padding-top: 60px;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    &.active {
+      width: 100vw;
+      transform: translateX(0%);
+      transition: transform 0.3s;
+    }
+    li a {
+      font-size: 0.42rem;
+      line-height: 1;
+      color: #fff;
+      padding: 0.32rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .icon {
+      width: 0.42rem;
+      margin-right: 8px;
+    }
+  }
+}

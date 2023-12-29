@@ -1,0 +1,118 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: $fontColor;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  background-color: $primary;
+  color: $color;
+}
+
+html {
+  // overflow-x: hidden;
+  /*當 100vw = 1920px 時，除以 19.2 可以讓 font-size 變成 100px
+      在其他屬性時，原先使用 px 單位改成 rem，就可以隨螢幕尺寸等比例縮放
+      例如：24px 的字，寫成 0.24rem*/
+  font-size: calc(100vw / 19.2);
+  @include mobile() {
+    font-size: calc(100vw / 7.68);
+  }
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  // background: #201d2b;
+  background: $orang;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  // background: #797587;
+  background: $fontColor;
+}
+
+
+::placeholder {
+  /* CSS 3 標準 */
+  color: #fff;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome, Safari */
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #fff;
+}
+
+::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+/* 移除樣式 */
+select {
+  width: 100%;
+  padding: 0;
+  background-clip: padding-box;
+  border-radius: 0;
+  border: 0;
+  text-align: center;
+  /*將預設的select選擇框樣式清除*/
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /* 添加箭頭樣式 */
+  background: url("../image/select_solid.png") no-repeat scroll 100% center;
+  background-size: 0.2rem 0.15rem;
+  outline: 0;
+}
+
+/* 移除樣式 */
+input {
+  width: 100%;
+  padding: 0;
+  background-clip: padding-box;
+  border-radius: 0;
+  border: 0;
+  text-align: center;
+  background-color: unset;
+  /*將預設的select選擇框樣式清除*/
+  /* 20230202更新 start */
+  /* appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; */
+  /* 20230202更新 end */
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background-color: unset;
+  outline: none;
+  -webkit-appearance: none; /*用於IOS下移除原生樣式*/
+  appearance: none;
+}
+
+input[type="radio"] {
+  width: 0.2rem;
+  height: 0.2rem;
+  padding: 4px;
+  margin: 0;
+  margin-right: 4px;
+  border: 1px #000 solid;
+  border-radius: 50px;
+  background-color: #fff;
+  cursor: pointer;
+}

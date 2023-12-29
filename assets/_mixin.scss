@@ -1,0 +1,40 @@
+$color: #e1dedd;
+$yellow: #efce8b;
+$primary: #fdd9be;
+$orang: #e57b53;
+$fontDarkRed: #c23522;
+$fontColor: #903d2c;
+$bgDark: rgba(0, 0, 0, 0.25);
+$skin: #efdac2;
+$formBgColor: #d9a653;
+$formLine: #e1dedd;
+
+@mixin windowXS {
+  @media (max-width:540px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width:768px) {
+    @content;
+  }
+}
+
+@mixin table {
+  @media (max-width:820px) {
+    @content;
+  }
+}
+
+@mixin windowXL {
+  @media (max-width:1200px) {
+    @content;
+  }
+}
+
+@mixin windowXXL {
+  @media (max-width:1400px) {
+    @content;
+  }
+}

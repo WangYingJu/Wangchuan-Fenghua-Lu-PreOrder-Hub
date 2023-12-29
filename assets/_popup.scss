@@ -1,0 +1,166 @@
+/* popup基本預設設定 不用動 */
+.popup-wrap {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  content: "";
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 150;
+}
+
+.popup-box {
+  width: 100%;
+  transform: translate(-50%, -50%) scale(1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* 自己的popup樣式 */
+.pop-body {
+  position: relative;
+  // 查詢獎勵 樣式
+  .content2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../image/award_bg.png") no-repeat center;
+    background-size: 616px 821px;
+    width: 616px;
+    height: 821px;
+    padding: 100px;
+    @include mobile() {
+      background-size: 105%;
+      width: 7rem;
+      height: 10rem;
+      padding: 1.5rem 1rem;
+    }
+    .title07 {
+      width: 254px;
+      margin-bottom: 36px;
+      @include mobile() {
+        width: 2.54rem;
+        margin-bottom: 0.6rem;
+      }
+    }
+    .note-list2 {
+      li {
+        font-size: 22px;
+        color: $fontColor;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 1;
+        @include mobile() {
+          font-size: 0.22rem;
+        }
+      }
+      li + li {
+        margin-top: 28px;
+        @include mobile() {
+          margin-top: 0.28rem;
+        }
+      }
+      .status-off {
+        width: 25%;
+        color: #e7ce90;
+        line-height: 1;
+        margin-left: auto;
+        padding: 8px 16px;
+        border-radius: 8px;
+        background-color: $fontColor;
+        @include mobile() {
+          padding: 0.08rem 0.16rem;
+          border-radius: 0.08rem;
+        }
+      }
+      .status-on {
+        width: 25%;
+        color: $fontColor;
+        line-height: 1;
+        margin-left: auto;
+        padding: 8px 16px;
+        border-radius: 8px;
+        background-color: #e7ce90;
+        @include mobile() {
+          padding: 0.08rem 0.16rem;
+          border-radius: 0.08rem;
+        }
+      }
+      .item {
+        width: 35%;
+      }
+      .serial-number {
+        width: 30%;
+        font-size: 22px;
+        color: $fontColor;
+        line-height: 1;
+        text-align: center;
+        margin: 0 auto;
+        @include mobile() {
+          font-size: 0.22rem;
+        }
+      }
+    } 
+  }
+}
+
+/* 關閉按鈕樣式 */
+.close-btn {
+  width: 0.7rem;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: -0.5rem;
+  transform: translate(50%, -50%);
+  transition: 0.5s;
+  @include mobile() {
+    width: 48px;
+    top: -10%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}
+
+.close-btn:hover {
+  transform: translate(50%, -50%) rotate(270deg);
+}
+
+.close-box {
+  a {
+    :hover {
+      transform: scale(0.9);
+      transition: 0.5s;
+    }
+    img {
+      margin: 0 auto;
+      margin-top: 16px;
+      @include mobile() {
+        width: 60%;
+        margin-top: 0.16rem;
+      }
+    }
+  }
+}
+
+.transform-in,
+.transform-out {
+  display: block;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.transform-in {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.transform-out {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}

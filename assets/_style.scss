@@ -1,0 +1,1297 @@
+// uitli
+.pc-d-none {
+  display: none !important;
+  @include mobile() {
+    display: block !important;
+  }
+}
+
+.sp-d-none {
+  display: block !important;
+  @include mobile() {
+    display: none !important;
+  }
+}
+
+.title {
+  display: block;
+  margin: 0 auto 0.08rem auto;
+  width: 5.05rem;
+  @include mobile() {
+    width: 7rem;
+  }
+}
+
+.form-frame {
+  border: $formLine 0.03rem solid;
+  border-radius: 0.1rem;
+  background-color: #303030;
+}
+
+.submit {
+  color: #fff;
+  font-size: 0.2rem;
+  font-weight: bold;
+  padding: 0.12rem;
+  border: $formLine 1px solid;
+  border-radius: 0.1rem;
+  background-color: #b03423;
+  cursor: pointer;
+}
+
+// right-nav
+.nav {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 50px;
+  -webkit-animation: webDrop 1.2s cubic-bezier(0.555, 1.650, 0.425, 0.800) forwards,  webSway 3s linear 1.0s infinite;
+  animation: webDrop 1.2s cubic-bezier(0.555, 1.650, 0.425, 0.800) forwards,  webSway 3s linear 1.0s infinite;
+  .nav-bg {
+    background: url("../image/nav_bg.png") no-repeat center;
+    background-size: 1.68rem 8.63rem;
+    height: 8.63rem;
+    padding: 0.24rem;
+    padding-top: 1.2rem;
+    -webkit-animation: bounceInDown 1s cubic-bezier(0.1, -1, 0.2, -0.5,);
+    animation: bounceInDown 1s cubic-bezier(0.1, -1, 0.2, -0.5,);
+    img {
+      width: 1.49rem;
+      margin: 0 auto;
+    }
+    li+li {
+      margin-top: 0.08rem;
+    }
+    li:nth-child(1) img {
+      width: 0.89rem;
+      position: absolute;
+      top: 1.5rem;
+      right: 0;
+      -webkit-animation: pulse 0.8s infinite;
+      animation: pulse 0.8s infinite;
+    }
+    li:nth-child(2) img {
+      width: 1.81rem;
+    }
+    li:nth-child(3) img {
+      width: 1.15rem;
+    }
+  }
+}
+
+// 錨點
+.anchor {
+  position: fixed;
+  z-index: 99;
+  right: 24px;
+  bottom: 24px;
+  @include mobile() {
+    right: 0.24rem;
+    bottom: 0.24rem;
+  }
+  .goTop {
+    width: 0.8rem;
+    margin-left: auto;
+    @include mobile() {
+      width: 1.5rem;
+    }
+  }
+}
+
+// 主視覺區塊
+.main {
+  position: relative;
+  background: url("../image/PC_bg_01.jpg") no-repeat center top;
+  padding-top: -1px;
+  background-size: 19.2rem 10.8rem;
+  height: 10.8rem;
+  @include mobile() {
+    background: url("../image/SP_bg_01.jpg") no-repeat center top;
+    background-size: 7.68rem 13.66rem;
+    height: 13.66rem;
+  }
+  .KV-logo {
+    position: absolute;
+    z-index: 3;
+    width: 1.9rem;
+    height: auto;
+    padding-bottom: 0%;
+    top: 2%;
+    left: 2%;
+  }
+  .KV-ch {
+    width: 100%;
+    height: 10.8rem;
+    @include mobile() {
+      height: 13.66rem;
+    }
+    .KV-ch03 {
+      position: absolute;
+      bottom: 0.2rem;
+      right: calc(50% - 8.5rem);
+      width: 10.16rem;
+      @include mobile() {
+        width: 6.21rem;
+        right: 0;
+        bottom: 4rem;
+      }
+    }
+    .KV-ch02 {
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 8rem);
+      width: 9.93rem;
+    }
+    .KV-ch01 {
+      position: absolute;
+      bottom: -89px;
+      left: calc(50% - 4.835rem);
+      width: 9.67rem;
+      @include mobile() {
+        width: 7.68rem;
+        left: 0;
+        bottom: -1.4rem;
+      }
+    }
+  }
+}
+
+// 主視覺文案
+.article {
+  background: url("../image/KV_cloud.png") no-repeat center;
+  background-size: 19.2rem 13.95rem;
+  width: 100%;
+  height: 13.95rem;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  @include mobile() {
+    background: url("../image/KV_cloud_sp.png") no-repeat center;
+    background-size: 7.68rem 10.87rem;
+    width: 100%;
+    height: 10.87rem;
+    top: 5.5rem;
+  }
+  .KV-artcle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 3.4rem;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(1, 1);
+    @include mobile() {
+      top: -2.3rem;
+    }
+  }
+  .KV-title {
+    width: 11.37rem;
+    margin-left: 0.3rem;
+    @include mobile() {
+      width: 6.97rem;
+      margin-left: 0rem;
+    }
+  }
+  .KV-sub {
+    width: 4.52rem;
+    margin-top: -0.5rem;
+    @include mobile() {
+      width: 5.5rem;
+    }
+  }
+  .goOrder {
+    width: 2.41rem;
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+    @include mobile() {
+      top: 11rem;
+      width: 3.6rem;
+    }
+    &:hover {
+      -webkit-filter: brightness(120%);
+      filter: brightness(120%);
+    }
+  }
+}
+
+// 內容
+.section {
+  position: relative;
+  margin-top: -1px;
+  background: url("../image/PC_bg_02.jpg") no-repeat center top;
+  background-size: 19.2rem 59.6rem;
+  height: 59.6rem;
+  padding: 1.2rem 0;
+  @include mobile() {
+    margin-top: -1px;
+    background: url("../image/SP_bg_02.jpg") no-repeat center top;
+    background-size: 7.68rem 114.35rem;
+    height: 114.35rem;
+    padding: 3rem 0; 
+  }
+}
+
+// 事前預約
+.section1 {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 3rem;
+  .content {
+    display: flex;
+    justify-content: center; 
+    align-items: start;
+    gap: 1rem;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    background: url("../image/order_bg.png") no-repeat center top;
+    background-size: 14.3rem 6.37rem;
+    height: 6.37rem;
+    width: 14.3rem;
+    padding: 0.6rem;
+    @include mobile() {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: url("../image/order_bg_sp.png") no-repeat center top;
+      background-size: 7.01rem 18.11rem;
+      height: 18.11rem;
+      padding: 0.4rem 0;
+    }
+    .title {
+      @include mobile() {
+        width: 5.05rem;
+      }
+    }
+  }
+  .step-gift {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.24rem;
+    @include mobile() {
+      flex-direction: column;
+      align-items: start;
+    }
+    .step-title {
+      width: 2.76rem;
+      @include mobile() {
+        width: 3.3rem;
+      }
+    }
+    .gift {
+      display: flex;
+      gap: 0.16rem;
+      @include mobile() {
+        margin-left: auto;
+        margin-right: auto;
+        gap: 0.6rem;
+      }
+      img:nth-child(odd) {
+        margin-top: -0.2rem;
+        @include mobile() {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  .box1 {
+    width: 45%;
+    @include mobile() {
+      width: 85%;
+    }
+  }
+  .box2 {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    align-items: start;
+    @include mobile() {
+      gap: 0.6rem;
+      width: 85%;
+    }
+    .step-title03 {
+      width: 3.13rem;
+      @include mobile() {
+        width: 4.94rem;
+      }
+    }
+  }
+  // step1
+  .gift01 {
+    width: 0.94rem;
+    height: 0.88rem;
+    @include mobile() {
+      transform: scale(1.2);
+    }
+  }
+  .rotateY360 {
+    transition: transform 0.5s;
+    transform-origin: center center;
+    transform: rotateY(360deg);
+  }
+  .gift02 {
+    width: 1.16rem;
+    height: 0.89rem;
+    @include mobile() {
+      transform: scale(1.2);
+    }
+  }
+  .gift03 {
+    width: 1.15rem;
+    height: 0.88rem;
+    margin-left: -0.1rem;
+    @include mobile() {
+      transform: scale(1.2);
+      margin-left: -0.2rem;
+    }
+  }
+  form {
+    padding: 0.24rem 0.24rem 0 0.24rem;
+  }
+  .selectSystem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.24rem;
+    margin-top: -0.24rem;
+    margin-bottom: 0.16rem;
+    @include mobile() {
+      margin-bottom: 0.18rem;
+    }
+    li {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.14rem 0;
+      @include mobile() {
+        width: 100%;
+        padding: 0.28rem 0;
+      }
+    }
+    .radio-input {
+      // 把原本的input藏起來
+      display: none;
+    }
+    .radio-label {
+      font-size: 0.24rem;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include mobile() {
+        font-size: 0.32rem;
+      }
+    }
+    .radio-button {
+      // 自定義樣式的點點
+      height: 0.24rem;
+      width: 0.24rem;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      margin-right: 0.1rem;
+      @include mobile() {
+        height: 0.36rem;
+        width: 0.36rem;
+      }
+    }
+    p {
+      color: #fff;
+      font-size: 0.24rem;
+      line-height: 1;
+      @include mobile() {
+        font-size: 0.36rem;
+      }
+    }
+    .radio-input:checked + .radio-label .radio-button::after {
+      // 中間點點
+      content: "";
+      display: block;
+      height: 0.12rem;
+      width: 0.12rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      opacity: 1;
+      @include mobile() {
+        height: 0.2rem;
+        width: 0.2rem;
+      }
+    }
+  }
+  .SelectRegion {
+    display: flex;
+    margin-bottom: 0.16rem;
+    text-align: center;
+    @include mobile() {
+      margin-bottom: 0.18rem;
+    }
+    select {
+      padding: 0.14rem;
+      color: #fff;
+      font-size: 0.24rem;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 0.1rem;
+      @include mobile() {
+        padding: 0.28rem 0;
+        font-size: 0.36rem;
+      }
+      option {
+        background-color: #303030;
+      }
+    }
+    input {
+      font-size: 0.24rem;
+      font-weight: bold;
+      @include mobile() {
+        padding: 0.28rem 0;
+        font-size: 0.36rem;
+      }
+    }
+  }
+  .VerificationCode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.24rem;
+    margin-bottom: 0.16rem;
+    @include mobile() {
+      gap: 0.18rem;
+      margin-bottom: 0.18rem;
+    }
+    input {
+      flex: 1 1 50%;
+      padding: 0.14rem;
+      font-size: 0.24rem;
+      font-weight: bold;
+      @include mobile() {
+        padding: 0.28rem 0;
+        font-size: 0.36rem;
+      }
+    }
+    .submit {
+      flex: 1 1 50%;
+      font-size: 0.24rem;
+      @include mobile() {
+        padding: 0.28rem 0;
+        font-size: 0.36rem;
+      }
+    }
+  }
+  p {
+    color: #fff;
+    font-size: 0.18rem;
+    text-align: center;
+  }
+  .checkBox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.24rem;
+    margin-bottom: 0.32rem;
+    @include mobile() {
+      margin-top: 0.18rem;
+      margin-bottom: 0.18rem;
+    }
+    label {
+      cursor: pointer;
+    }
+    .radio-input2 {
+      // 把原本的input藏起來
+      display: none;
+    }
+    .radio-label {
+      font-size: 0.24rem;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include mobile() {
+        font-size: 0.32rem;
+      }
+    }
+    .radio-button {
+      // 自定義樣式的點點
+      height: 0.24rem;
+      width: 0.24rem;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      margin-right: 0.1rem;
+      @include mobile() {
+        height: 0.36rem;
+        width: 0.36rem;
+      }
+    }
+    .radio-input2:checked + .radio-label .radio-button::after {
+      // 中間點點
+      content: "";
+      display: block;
+      height: 0.12rem;
+      width: 0.12rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      opacity: 1;
+      @include mobile() {
+        height: 0.2rem;
+        width: 0.2rem;
+      }
+    }
+  }
+  .send {
+    width: 2.41rem;
+    margin: 0 auto;
+    left: 50%;
+    transform: scale(1, 1);
+    transition: all 0.5s ease-out;
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+    @include mobile() {
+      margin: 0 auto 0.3rem auto;
+      width: 50%;
+    }
+    &:hover {
+      transform: scale(0.9, 0.9);
+      -webkit-filter: brightness(120%);
+      filter: brightness(120%);
+    }
+  }
+  .font-custom {
+    font-size: 0.18rem;
+    color: #fff;
+    @include mobile() {
+      font-size: 0.32rem;
+    }
+  }
+  .more {
+    font-size: 0.18rem;
+    color: #fff;
+    color: $fontDarkRed;
+    text-decoration: underline;
+    margin-left: 4px;
+    @include mobile() {
+      font-size: 0.32rem;
+    }
+  }
+
+  // step2
+  .step2-box {
+    position: relative;
+    width: 100%;
+    .step-gift {
+      align-items: start;
+    }
+    .gift04 {
+      width: 2.68rem;
+      height: 2.28rem;
+      @include mobile() {
+        transform: scale(1.5);
+        margin-right: -3rem;
+        margin-top: -1rem !important;
+        position: relative;
+        z-index: -1;
+      }
+    }
+    .app {
+      display: flex;
+      gap: 0.24rem;
+      position: absolute;
+      top: 1rem;
+      padding: 0.24rem;
+      img {
+        width: 1.7rem;
+        @include mobile() {
+          width: 3rem;
+        }
+      }
+    }
+  }
+  // step3
+  .step3-box {
+    position: relative;
+    margin-top: 0.2rem;
+    width: 100%;
+    .gift05 {
+      width: 0.94rem;
+      height: 0.88rem;
+      @include mobile() {
+        transform: scale(1.2);
+      }
+    }
+    .gift06 {
+      width: 0.95rem;
+      height: 0.89rem;
+      @include mobile() {
+        transform: scale(1.2);
+      }
+    }
+    .gift07 {
+      width: 0.98rem;
+      height: 0.88rem;
+      @include mobile() {
+        transform: scale(1.2);
+      }
+    }
+    .fb-box {
+      padding: 0 0.2rem;
+    }
+    .fb-icon {
+      position: absolute;
+      top: 1.5rem;
+      right: 0.6rem;
+      @include mobile() {
+        top: 2.8rem;
+        right: 0.5rem;
+      }
+    }
+  }
+  // 裝飾人偶
+  .float-01 {
+    position: absolute;
+    top: 4.5rem;
+    left: .35rem;
+    width: 2.96rem;
+  }
+  .float-02 {
+    position: absolute;
+    top: 4.5rem;
+    right: 0;
+    width: 3.07rem;
+  }
+}
+
+// 忘川古今
+.section2 {
+  position: relative;
+  margin-bottom: 5rem;
+  @include windowXXL() {
+    margin-bottom: 4rem;
+  }
+  @include mobile() {
+    margin-bottom: 9rem;
+  }
+  .subtitle {
+    width: 4rem;
+    margin: -0.28rem auto 0.24rem auto;
+    @include mobile() {
+      transform: scale(1.2);
+    }
+  }
+  .description {
+    font-size: 0.18rem;
+    color: $fontColor;
+    text-align: center;
+    @include mobile() {
+      width: 60%;
+      font-size: 0.32rem;
+      margin: 0 auto;
+    }
+  }
+  // 裝飾門
+  .door-left {
+    position: absolute;
+    top: -1.61rem;
+    left: 0;
+    width: 4.95rem;
+  }
+  .door-right {
+    position: absolute;
+    top: -1.61rem;
+    right: 0;
+    width: 5.03rem;
+  }
+  // 裝飾雲
+  .cloud {
+    position: absolute;
+    top: -0.5rem;
+    width: 100%;
+  }
+  // 歷史事件壁紙
+  .wallpaper-content {
+    background: url("../image/event_bg_pc.png") no-repeat center;
+    background-size: 11.84rem 6.73rem;
+    width: 11.84rem;
+    height: 6.73rem;
+    position: absolute;
+    top: 2rem;
+    z-index: 3;
+    left: 50%;
+    transform: translate(-50%,0%);
+    padding: 0.24rem 0rem 0.24rem 1.4rem;
+    display: flex;
+    align-items: start;
+    @include mobile() {
+      z-index: 3;
+      background: url("../image/event_bg_sp.png") no-repeat center;
+      background-size: 7.4rem 13.02rem;
+      width: 7.4rem;
+      height: 13.02rem;
+      padding: 0;
+      flex-direction: column;
+    }
+    .c-transition {
+      overflow: hidden;
+      position: relative;
+      &::before {
+        background-image: url('../image/ink-photo-frame.png');
+        background-size: 100% 100%;
+        background-position: 50% 50%;
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+      &::after {
+        background-image: url('../image/ink-transition-sprite.png');
+        background-size: 100% 100%;
+        content: '';
+        height: 100%;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transform: translateX(-1.25%);
+        width: 4000%;
+      }
+      &.is-active::after {
+        animation: ink-transition 2s steps(39) 0.5s forwards;
+      }
+    }
+    .c-transition--large {
+      width: 12rem;
+      @include mobile() {
+        width: 6rem;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+      }
+    }
+    .c-transition__img {
+      height: 100%;
+      object-fit: cover;
+      opacity: 1; // 0
+      width: 100%;
+      .is-active & {
+        opacity: 1;
+      }
+      .c-transition--img-top & {
+        object-position: 50% 0;
+      }
+    }
+    .c-stamp {
+      display: block;
+      margin: 0 auto;
+      width: rem(32);
+    }
+    .step1, .step2, .step3 {
+      width: 80%;
+      height: 97%;
+      display: flex;
+      flex-direction: column;
+      @include mobile() {
+        margin: 0 auto;
+        height: 38%;
+      }
+    }
+    .step-title {
+      width: auto;
+      height: 0.37rem;
+      margin-top: 0.36rem;
+      @include mobile() {
+        transform: scale(1.6);
+        margin-left: 0.5rem;
+      }
+    }
+    p {
+      width: 80%;
+      font-size: 0.24rem;
+      color: $fontColor;
+      padding-top: 0.24rem;
+      padding-left: 0.24rem;
+      @include mobile() {
+        width: 100%;
+        font-size: 0.36rem;
+      }
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      margin-top: auto;
+      @include mobile() {
+        position: absolute;
+        top: 10.5rem;
+        right: 0.24rem;
+        margin-left: auto;
+      }
+      a {
+        width: 1.5rem;
+        &:hover {
+          transition: 0.5s;
+          transform: scale(0.95);
+          -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+        }
+        @include mobile() {
+          width: 2rem;
+        }
+      }
+    }
+    .emoji {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.08rem;
+      padding-left: 0.24rem;
+      img {
+        width: 26%;
+        @include mobile() {
+          width: 18%;
+          margin-top: 0.2rem;
+        }
+      }
+    }
+    .share-icon {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 0.46rem;
+      @include mobile() {
+        justify-content: center;
+      }
+      img {
+        width: 1.2rem;
+        @include mobile() {
+          width: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+// 門檻獎勵
+.section3 {
+  position: relative;
+  margin-bottom: 2rem;
+  @include mobile() {
+    margin-bottom: 6.5rem;
+  }
+  .activities {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    gap: 0.12rem;
+    margin-top: -0.5rem;
+    @include mobile() {
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+      // padding: 3.8rem .32rem 0rem .32rem;
+    }
+    li {
+      @include mobile() {
+        flex: 50%;
+        margin-bottom: -1.2rem;
+      }
+    }
+    li img{
+      width: 1.8rem;
+      @include mobile() {
+        width: 85%;
+        margin: 0 auto;
+      }
+    }
+  }
+  .float-03 {
+    width: 3.3rem;
+    position: absolute;
+    bottom: -0.9rem;
+    right: 2rem;
+    @include mobile() {
+      width: 5rem;
+      bottom: -5.5rem;
+      right: 0rem;
+    }
+  }
+}
+
+// 相約忘川
+.section4 {
+  position: relative;
+  margin-bottom: 2.5rem;
+  @include mobile() {
+    margin-bottom: 3.5rem;
+  }
+  .taipinggongjhu {
+    width: 6.97rem;
+    position: absolute;
+    top: -0.2rem;
+    left: 0;
+  }
+  .wangjhaojyun {
+    width: 6.5rem;
+    position: absolute;
+    top: -0.5rem;
+    right: 0;
+  }
+  .title05 {
+    width: 5.05rem;
+    @include mobile() {
+      width: 6rem;
+    }
+  }
+  .content {
+    position: relative;
+    z-index: 2;
+    background: url("../image/invite_bg_pc.png") no-repeat center;
+    background-size: 13.18rem 5.8rem;
+    width: 13.18rem;
+    height: 5.8rem;
+    padding: 1rem 1.6rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile() {
+      background: url("../image/invite_bg_sp.png") no-repeat center;
+      background-size: 7.26rem 17.71rem;
+      width: 7.26rem;
+      height: 17.71rem;
+      padding: 2.7rem 0;
+      margin-top: -1.2rem;
+    }
+    h4 {
+      position: relative;
+      background: url("../image/h4_title02.png") no-repeat center;
+      background-size: 4.01rem 0.53rem;
+      width: 4.01rem;
+      height: 0.53rem;
+      @include mobile() {
+        transform: scale(1.3);
+      }
+      span {
+        position: absolute;
+        top: 0.02rem;
+        right: 1.2rem;
+        font-size: 0.32rem;
+        color: #ffdb9c;
+        @include mobile() {
+          font-size: 0.4;
+        }
+      }
+    }
+  }
+  .messageBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.16rem;
+    @include mobile() {
+      flex-direction: column;
+      width: 70%;
+      margin-top: 0.36rem;
+    }
+    .linkBox {
+      display: flex;
+      .link {
+        width: 4rem;
+        font-size: 0.2rem;
+        padding: 0.08rem 0.24rem;
+        color:$fontColor;
+        border: $fontColor 1px solid;
+        border-radius: 0.1rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow:hidden;
+        @include mobile() {
+          width: 3.5rem;
+          padding: 0 0 0 8px;
+          font-size: 18px;
+        }
+      }
+      .submit {
+        padding: 0.1rem 0.32rem;
+        border: unset;
+        background-color: #e59b1b;
+        margin-left: 0.2rem;
+        @include mobile() {
+          font-size: 18px;
+          word-break: keep-all;
+        }
+      }
+    }
+    .socialMedia {
+      display: flex;
+      gap: 0.16rem;
+      img {
+        width: 0.5rem;
+        @include mobile() {
+          width: 0.8rem;
+        }
+      }
+    }
+  }
+  .invite {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.2rem;
+    @include mobile() {
+      width: 85%;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    img {
+      width: 33%;
+      margin-left: -0.12rem;
+      @include mobile() {
+        width: 80%;
+        margin: 0 0 0 -0.28rem;
+      }
+      &:nth-child(odd) {
+        margin-top: -0.3rem;
+        margin-bottom: 0.3rem;
+        @include mobile() {
+          margin-top: unset;
+          margin-bottom: unset;
+        }
+      }
+    }
+  }
+}
+
+// 遊戲特色
+.section5 {
+  position: relative;
+  margin-bottom: 2.5rem;
+  @include mobile() {
+    padding-bottom: 0rem;
+  }
+  // 裝飾喵
+  .float-04 {
+    width: 4.46rem;
+    position: absolute;
+    top: -2rem;
+    right: 2rem;
+  }
+  // 裝飾人物
+  .taipinggongjhu {
+    position: absolute;
+    top: -1rem;
+    width: 7.68rem;
+  }
+  .title04 {
+    width: 2.15rem;
+    position: absolute;
+    top: 0;
+    left: 0.2rem;
+  }
+  // 五圖
+  .hero {
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    @include mobile() {
+      width: 90%;
+      padding-top: 4.6rem;
+    }
+    .hero_swiper {
+      width: 200%;
+      position: relative;
+      margin: auto;
+      transform: translateX(-25%);
+      @include mobile() {
+        width: 100%;
+        transform: translateX(0%);
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    .swiper-3d {
+      perspective: 263px;
+    }
+    .swiper-slide {
+      position: relative;
+      -webkit-filter: brightness(40%);
+      filter: brightness(40%);
+      &:not(.swiper-slide-active)::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.45);
+        border: 0px solid rgba(0, 0, 0, 0.45);
+      }
+    }
+    .swiper-slide-active {
+      position: relative;
+      -webkit-filter: brightness(100%);
+      filter: brightness(100%);
+      padding: 0.2rem;
+      img {
+        border-radius: 0.24rem;
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: no-repeat url(../image/store_bg.png);
+        background-size: 100%;
+        z-index: -1;
+        position: absolute;
+        top: 1%;
+        left: calc(50% - 50%);
+      }
+    }
+  }
+}
+
+// 注意事項
+.section6 {
+  position: relative;
+  // 裝飾喵
+  .float-05 {
+    width: 4.18rem;
+    position: absolute;
+    top: -3.2rem;
+    left: 0.5rem;
+  }
+  .title {
+    margin-bottom: 0.48rem;
+  }
+  .note {
+    width: 13.5rem;
+    height: 3.2rem;
+    margin: 0 auto;
+    color: $fontColor;
+    font-size: 0.18rem;
+    line-height: 1.8;
+    list-style: decimal;
+    padding-left: 0.66rem;
+    padding-right: 0.5rem;
+    font-weight: 400;
+    overflow-x: hidden;
+    overflow-y: auto;
+    @include windowXL() {
+      width: 15rem;
+      height: 3rem;
+    }
+    @include mobile() {
+      width: 90%;
+      height: 7rem;
+      padding-left: 0.66rem;
+      padding-right: 0.5rem;
+      font-size: 0.32rem;
+      margin-top: -0.5rem;
+    }
+    span {
+      color: $fontDarkRed;
+    }
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 12px;
+    @include mobile() {
+      width: 8px;
+    }
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background: $fontColor;
+  }
+}
+
+.footer {
+  position: relative;
+  z-index: 5;
+  color: $color;
+  padding: 36px;
+  background-color: #380404;
+  @include mobile() {
+    padding: 0.6rem 0.6rem;
+  }
+  .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.36rem;
+    @include windowXL() {
+      flex-direction: column;
+    }
+    .ican {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      @include mobile() {
+        flex-direction: column;
+        gap: 0;
+      }
+      .ican-logo {
+        width: 150px;
+        @include table() {
+          width: 2.5rem;
+        }
+        @include mobile() {
+          width: 3rem;
+        }
+      }
+      .all-right {
+        font-size: 14px;
+        line-height: 1.2;
+      }
+    }
+    .logo {
+      width: 200px;
+      @include mobile() {
+        width: 3.5rem;
+      }
+    }
+    .age {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      .age15 {
+        width: 50px;
+        @include mobile() {
+          flex: 1 1 15%;
+        }
+      }
+      .agenote {
+        font-size: 14px;
+      }
+    }
+  }
+}
